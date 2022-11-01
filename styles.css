@@ -31,8 +31,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,215,133,1) 35%, r
     margin-bottom: 0;
 }
 .img_container{
-    background-image: url("https://raw.githubusercontent.com/CarlosCarela1/pokedex/dd739150c137f41595f7e4b8c539435a0ea859fc/images/blob_20-3-73.svg");
+    background-image: url("https://cdn.shopify.com/s/files/1/0028/9003/9365/files/svg.png?v=1667343915");
     width: 166px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
 }
 h1.emcabezado {
     color: white;
