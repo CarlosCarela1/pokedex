@@ -51,4 +51,4 @@ function createPokemon(pokemon){
 }
 
 
-llamarPokemones(898)
+llamarPokemones(450)
