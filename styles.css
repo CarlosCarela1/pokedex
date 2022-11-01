@@ -19,7 +19,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,215,133,1) 35%, r
     background-color: #ffffff !important;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.25rem;
+    border-radius: 1.25rem;
     text-align: center;
     
 }
