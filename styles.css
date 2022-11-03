@@ -55,7 +55,7 @@ h1.emcabezado {
   
 }
 .card:hover {
-    transform: rotateY(180deg);
+    transform: perspective(100px) rotatex(180deg);
 }
 /* .back:hover{
     transform: rotateY(180deg);
