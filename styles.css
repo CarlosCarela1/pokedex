@@ -49,20 +49,20 @@ h1.emcabezado {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     text-align: center;
-    transition: 2s;
+    transition: 1s;
     backface-visibility: hidden;
-    height: 176px;
+    height: 230px;
   
 }
 .card:hover {
-    transform: perspective(800px) rotatex(180deg);
+    transform: rotateY(180deg);
 }
 /* .back:hover{
     transform: rotateY(180deg);
 } */
 .back{
     width: 166px;
-    height: 176px;
+    height: 230px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,215,133,1) 0%, rgba(0,212,255,1) 100%);
     display: flex;
     justify-content: center;
@@ -78,14 +78,19 @@ h1.emcabezado {
 .parrafo_back{
     text-align: center;
     color: white;
-    font-size: 17px;
+    font-size: 19px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .pokemon-name{
     font-weight: 700;
+    font-size: 19px;
 }
 
-
+.imagenes-pokemones{
+   width: 151px;
+}
 
 
 

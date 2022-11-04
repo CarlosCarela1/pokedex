@@ -1,4 +1,8 @@
 const pokemonContainer = document.querySelector(".pokemon_container")
+const search = document.getElementById("search");
+const buscadorContainer = document.getElementById("buscadorContainer")
+
+
 
 const llamarData = async (id)=>{
     pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -9,12 +13,11 @@ const llamarData = async (id)=>{
 
 
 
-llamarPokemones =(num)=>{
+const llamarPokemones =(num)=>{
     for(i = 1; i < num; i++){
         llamarData(i)
     }
 }
-
 
 
 
@@ -39,7 +42,8 @@ function createPokemon(pokemon){
     imgContainer.classList.add("img_container")
 
     const img = document.createElement("img");
-    img.src = pokemon.sprites.front_default;
+    img.classList.add("imagenes-pokemones")
+    img.src = pokemon.sprites.other.home.front_default;
 
     const id = document.createElement("p")
     id.classList.add("id")
@@ -48,7 +52,7 @@ function createPokemon(pokemon){
 
     const pokemonName = document.createElement("p");
     pokemonName.classList.add("parrafo")
-    pokemonName.innerHTML = `<p style="pokemon-name">${pokemon.name}</p>`;
+    pokemonName.innerHTML = `<p class="pokemon-name">${pokemon.name}</p>`;
 
 
 
@@ -65,4 +69,7 @@ function createPokemon(pokemon){
 }
 
 
-llamarPokemones(400)
+
+
+
+llamarPokemones(200)
