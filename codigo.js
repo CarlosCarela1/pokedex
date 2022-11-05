@@ -43,7 +43,7 @@ function createPokemon(pokemon){
 
     const img = document.createElement("img");
     img.classList.add("imagenes-pokemones")
-    img.src = pokemon.sprites.other.home.front_default;
+    img.src = pokemon.sprites.other.dream_world.front_default;
 
     const id = document.createElement("p")
     id.classList.add("id")
@@ -72,4 +72,4 @@ function createPokemon(pokemon){
 
 
 
-llamarPokemones(200)
+llamarPokemones(600)
