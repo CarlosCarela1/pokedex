@@ -54,9 +54,7 @@ h1.emcabezado {
     height: 230px;
   
 }
-.card:hover {
-    transform: rotateY(180deg);
-}
+
 /* .back:hover{
     transform: rotateY(180deg);
 } */
@@ -70,10 +68,20 @@ h1.emcabezado {
     margin-bottom: 18px;
     margin-left: 2px;
     border-radius: 0.25rem;
-    
+    transition: 1s;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 .contenedor_principal {
     position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+}
+.contenedor_principal:hover .card {
+    transform: rotateY(180deg);
+}
+.contenedor_principal:hover .back {
+    transform: rotateY(360deg);
 }
 .parrafo_back{
     text-align: center;
