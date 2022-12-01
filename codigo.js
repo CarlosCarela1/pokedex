@@ -8,7 +8,6 @@ const llamarData = async (id)=>{
     pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
     data = await pokemones.json();
     createPokemon(data)
-    console.log(data)
 }
 
 
