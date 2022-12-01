@@ -7,8 +7,8 @@ const buscadorContainer = document.getElementById("buscadorContainer")
 const llamarData = async (id)=>{
     pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
     data = await pokemones.json();
-    console.log(data)
     createPokemon(data)
+    console.log(data)
 }
 
 
@@ -72,4 +72,41 @@ function createPokemon(pokemon){
 
 
 
-llamarPokemones(600)
+llamarPokemones(300)
+
+
+
+
+
+
+
+const filtrar = async (search)=>{  
+    try {
+        search = document.getElementById("search").value.toLowerCase()
+        let pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}/`);
+        let data = await pokemones.json()
+        let resultado = data;
+        console.log(resultado)
+        Mostrar(resultado)
+
+       
+    } catch (error) {
+        const mostrar = document.getElementById("mostrar");
+        mostrar.innerHTML = `<p class="mensaje-error">el pokemon ${search} no existe, asegurese de escribir correctamente el nombre de tu pokemon favorito</p>`
+    
+} 
+}
+
+boton.addEventListener("click", ()=> {
+    filtrar()
+})
+
+const Mostrar = (poke)=>{
+
+    let imagen = document.getElementById("imagen-buscador");
+    imagen.classList.add("imagen-search")
+    imagen.src = poke.sprites.other.dream_world.front_default;
+    const informacionPokemon = document.getElementById("poke-info");
+    informacionPokemon.innerHTML = `<p class="info-weight">name: ${poke.name}`  + `<br/>` + `Base Experience: ${poke.base_experience}` + `<br/>` +`Type: `+  `${poke.types[0].type.name}</p>`;
+
+}
