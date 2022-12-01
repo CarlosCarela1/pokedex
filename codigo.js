@@ -8,6 +8,7 @@ const llamarData = async (id)=>{
     pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
     data = await pokemones.json();
     createPokemon(data)
+    console.log(data)
 }
 
 
@@ -71,7 +72,7 @@ function createPokemon(pokemon){
 
 
 
-llamarPokemones(300)
+llamarPokemones(200)
 
 
 
@@ -80,32 +81,47 @@ llamarPokemones(300)
 
 
 const filtrar = async (search)=>{  
-    try {
+    "use strict"
+   
         search = document.getElementById("search").value.toLowerCase()
         let pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}/`);
         let data = await pokemones.json()
         let resultado = data;
         console.log(resultado)
-        Mostrar(resultado)
-
+        Mostrar(data)
+        locations(search)
        
-    } catch (error) {
-        const mostrar = document.getElementById("mostrar");
-        mostrar.innerHTML = `<p class="mensaje-error">el pokemon ${search} no existe, asegurese de escribir correctamente el nombre de tu pokemon favorito</p>`
-    
-} 
+       
+   
 }
 
 boton.addEventListener("click", ()=> {
     filtrar()
 })
 
+
+
+
 const Mostrar = (poke)=>{
-
-    let imagen = document.getElementById("imagen-buscador");
-    imagen.classList.add("imagen-search")
-    imagen.src = poke.sprites.other.dream_world.front_default;
+    "use strict"
     const informacionPokemon = document.getElementById("poke-info");
-    informacionPokemon.innerHTML = `<p class="info-weight">name: ${poke.name}`  + `<br/>` + `Base Experience: ${poke.base_experience}` + `<br/>` +`Type: `+  `${poke.types[0].type.name}</p>`;
-
+    informacionPokemon.innerHTML = `<p class="info-weight"><b>Nombre:</b> ${poke.name}`  + `<br/>` + `<b>Experiencia Base:</b> ${poke.base_experience}` + `<br/>` +`<b>Tipo:</b> `+  `${poke.types[0].type.name}</p>`;
+    let imagen = document.getElementById("imagen-buscador");
+    imagen.src = poke.sprites.other.dream_world.front_default;
+    imagen.classList.add("imagen-search");
+    
 }
+
+const locations = async (name)=>{  
+    "use strict"
+        let pokemones = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${name}/`);
+        let data = await pokemones.json(); 
+        let descripcion = document.getElementById("description");
+        descripcion.innerHTML = `<p class="descripcion">${data.flavor_text_entries[26].flavor_text}</p>`;
+}
+locations()
+
+// const descriptionText =(descripcion)=>{
+//     descripcion = document.getElementById("description");
+//     descripcion.innerHTML = `<p>${descripcion.flavor_text_entries[26].flavor_text}</p>`
+// }
