@@ -133,6 +133,7 @@ h1.emcabezado {
     display: flex;
     gap: 65px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 [type=search] {
     width: 272px;
