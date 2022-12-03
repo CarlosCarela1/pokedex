@@ -119,9 +119,9 @@ h1.emcabezado {
     display: flex;
     align-items: center;
     width: 100%;
-   
-    margin-bottom: 14px;
+    margin-bottom: 38px;
     flex-direction: column;
+    margin-top: 40px;
 }
 .formulario {
     display: flex;
@@ -134,12 +134,15 @@ h1.emcabezado {
     gap: 65px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 [type=search] {
     width: 272px;
     outline: none;
     border: none;
+    border: dashed lightsteelblue;
 }
+
 #boton {
     border: none;
 }
